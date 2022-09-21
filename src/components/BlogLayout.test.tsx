@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import Layout from "./Layout";
+import BlogLayout from "./BlogLayout";
 
 describe("Layout", () => {
   it('should render component and the prop', () => {
     render(
-      <Layout navMenu={<p>navMenuProp</p>}>
+      <BlogLayout navMenu={<p>navMenuProp</p>}>
         <p>childrenProp</p>
-      </Layout>
+      </BlogLayout>
     );
 
     expect(screen.getByText("navMenuProp")).toBeInTheDocument();

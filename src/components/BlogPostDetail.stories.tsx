@@ -1,5 +1,5 @@
 import BlogPostDetail from "./BlogPostDetail";
-import Layout from "./Layout";
+import BlogLayout from "./BlogLayout";
 import Nav from "./BlogNav";
 
 const content = (
@@ -51,7 +51,7 @@ const blogPostDetailProps = {
 export const defaultStory = () => <BlogPostDetail {...blogPostDetailProps} />;
 
 export const exampleUsage = () => (
-  <Layout
+  <BlogLayout
     navMenu={
       <Nav
         navItems={[
@@ -75,5 +75,5 @@ export const exampleUsage = () => (
     }
   >
     <BlogPostDetail {...blogPostDetailProps} />
-  </Layout>
+  </BlogLayout>
 );

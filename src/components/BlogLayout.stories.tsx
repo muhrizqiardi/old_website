@@ -1,4 +1,4 @@
-import Layout from "./Layout";
+import BlogLayout from "./BlogLayout";
 import Nav from "./BlogNav";
 
 const navItems = [
@@ -20,7 +20,7 @@ const navItems = [
 ];
 
 export const defaultStory = () => (
-  <Layout
+  <BlogLayout
     navMenu={
       <div className="h-full bg-red-500 flex justify-center items-center">
         Navigation Menu
@@ -30,11 +30,11 @@ export const defaultStory = () => (
     <div className="h-72 bg-blue-500 flex justify-center items-center">
       Content
     </div>
-  </Layout>
+  </BlogLayout>
 );
 
 export const exampleStory = () => (
-  <Layout navMenu={<Nav navItems={navItems} />}>
+  <BlogLayout navMenu={<Nav navItems={navItems} />}>
     <div className="h-72 bg-blue-500 flex justify-center items-center">
       Content
     </div>
@@ -47,5 +47,5 @@ export const exampleStory = () => (
     <div className="h-72 bg-blue-500 flex justify-center items-center">
       Content
     </div>
-  </Layout>
+  </BlogLayout>
 );

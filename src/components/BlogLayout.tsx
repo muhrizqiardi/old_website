@@ -3,7 +3,7 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 
-function Layout(props: LayoutProps) {
+function BlogLayout(props: LayoutProps) {
   return (
     <>
       <div className="max-w-5xl mx-auto md:grid md:grid-cols-4">
@@ -15,4 +15,4 @@ function Layout(props: LayoutProps) {
   );
 }
 
-export default Layout;
+export default BlogLayout;
