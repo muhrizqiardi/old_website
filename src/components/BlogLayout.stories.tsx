@@ -1,5 +1,5 @@
 import BlogLayout from "./BlogLayout";
-import Nav from "./BlogNav";
+import BlogNav from "./BlogNav";
 
 const navItems = [
   {
