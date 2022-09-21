@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     // TODO: remove placeholder images domain
-    domains: ["res.cloudinary.com", "loremflickr.com"],
+    domains: ["res.cloudinary.com", "loremflickr.com", "www.notion.so"],
   },
 };
 

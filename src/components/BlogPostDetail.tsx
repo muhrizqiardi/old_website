@@ -1,10 +1,10 @@
 import dayjs from "dayjs";
 import Image from "next/image";
-import MultiLineToParagraphs from "./MultiLineToParagraphs";
+import ReactMarkdown from "react-markdown";
 
 interface BlogPostDetailProps {
   title: string;
-  coverImage: string;
+  coverImage?: string;
   snippet: string;
   content: string;
   createdAt: string;
@@ -34,18 +34,22 @@ function BlogPostDetail(props: BlogPostDetailProps) {
           </p>
           <h2 className="mb-4 text-2xl font-bold">{props.title}</h2>
         </div>
-        <div className="w-full h-96 object-contain bg-black rounded-2xl flex flex-col gap-3 overflow-hidden">
-          <Image
-            src={props.coverImage}
-            alt={props.title}
-            width="100%"
-            height={384}
-            layout="responsive"
-            objectFit="contain"
-          />
-        </div>
+
+        {props.coverImage ? (
+          <div className="w-full h-96 object-contain bg-black rounded-2xl flex flex-col gap-3 overflow-hidden">
+            <Image
+              src={props.coverImage}
+              alt={props.title}
+              width="100%"
+              height={384}
+              layout="responsive"
+              objectFit="contain"
+            />
+          </div>
+        ) : null}
+
         <p className="mb-4 not-prose text-sm leading-tight">{props.snippet}</p>
-        <MultiLineToParagraphs paragraphs={props.content} />{" "}
+        <ReactMarkdown>{props.content}</ReactMarkdown>
       </article>
     </div>
   );
