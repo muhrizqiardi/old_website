@@ -88,7 +88,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = () => {
 
 const HomePage = (props: HomePageProps) => {
   return (
-    <>
+    <div className="bg-custom-light">
       <HomeHeader />
       <HomeHeroSection />
       <Hr />
@@ -102,7 +102,7 @@ const HomePage = (props: HomePageProps) => {
       </HomeSection>
       <Hr />
       <HomeFooter />
-    </>
+    </div>
   );
 };
 
