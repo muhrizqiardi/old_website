@@ -29,7 +29,7 @@ function BlogNav(props: BlogNavProps) {
 
   return (
     <div className="h-16 md:h-screen p-3 flex md:flex-col z-50 bg-white md:overflow-y-auto">
-      <div className="mr-auto md:mr-0 p-6 flex md:flex-col items-center gap-4">
+      <div className="mr-auto md:mr-0 md:p-6 flex md:flex-col items-center gap-4">
         <div className="w-10 h-10 md:w-28 md:h-28 bg-gray-300 rounded-full flex-shrink-0"></div>
         <p className="font-medium">muhrizqiardi</p>
       </div>
