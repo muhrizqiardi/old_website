@@ -5,34 +5,44 @@ import BlogPostDetail, {
   BlogPostDetailProps,
 } from "../../../components/BlogPostDetail";
 import { blogNavItems } from "../../../helpers/constants";
-import { faker } from "@faker-js/faker";
-import MultiLineToParagraphs from "../../../components/MultiLineToParagraphs";
+import Database from "../../../services/Database";
+import Page from "../../../services/Page";
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { env } from "../../../../helpers/env";
 
 export interface BlogPostDetailPageProps extends BlogPostDetailProps {}
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // TODO: remove placeholder
-  const paths = Array(12).map((item, index) => ({
+  const response = await Database.query(env.NOTION_PAGE_ID);
+  const paths = response.results.map((result) => ({
     params: {
-      postSlug: index.toString(),
+      postSlug: result.id,
     },
   }));
 
   return { paths, fallback: true };
 };
 
-export const getStaticProps: GetStaticProps<BlogPostDetailPageProps> = (
+export const getStaticProps: GetStaticProps<BlogPostDetailPageProps> = async (
   context
 ) => {
+  const postSlug = context.params?.postSlug as string;
+  const contentMeta = await Page.retrieve(postSlug);
+  const content = await Page.getMarkdownString(postSlug);
+  const cover = (contentMeta as PageObjectResponse).cover;
+
   return {
     props: {
-      // TODO: replace placeholder
-      title: faker.lorem.sentence(10),
-      content: faker.lorem.paragraphs(17),
-      coverImage: faker.image.business(1920, 1080, true),
-      createdAt: faker.date.recent(3).toISOString(),
-      updatedAt: faker.date.recent(1).toISOString(),
-      snippet: faker.lorem.paragraph(2),
+      title:
+        (contentMeta as any).properties?.title?.title[0]?.text?.content ?? "",
+      content,
+      coverImage:
+        cover?.type === "external" ? cover.external.url : cover?.file.url ?? "",
+      createdAt: (contentMeta as PageObjectResponse).created_time,
+      updatedAt: (contentMeta as PageObjectResponse).last_edited_time,
+      snippet:
+        (contentMeta as any).properties?.snippet?.rich_text[0]?.text?.content ??
+        "",
     },
   };
 };
