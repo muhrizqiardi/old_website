@@ -1,21 +1,27 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export interface BlogNavItemProps {
   href: string;
   title: string;
-  isCurrentPage: boolean;
 }
 
 function BlogNavItem(props: BlogNavItemProps) {
+  const router = useRouter();
+  
   return (
-    <li
-      className={`py-1 px-1.5 rounded-md ${
-        props.isCurrentPage ? "font-bold" : ""
-      }`}
-    >
-      <a href={props.href} className="hover:underline">
-        {props.title}
-      </a>
+    <li className="py-1 px-1.5 rounded-md">
+      <Link href={props.href} passHref>
+        <a
+          href={props.href}
+          className={`hover:underline ${
+            router.pathname === props.href ? "font-bold" : ""
+          }`}
+        >
+          {props.title}
+        </a>
+      </Link>
     </li>
   );
 }
