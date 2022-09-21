@@ -1,7 +1,8 @@
 import dayjs from "dayjs";
+import Link from "next/link";
 
 interface BlogPostsListItemProps {
-  thumbnail?: string;
+  thumbnail?: string | null;
   title: string;
   href: string;
   snippet: string;
@@ -37,9 +38,9 @@ function BlogPostsListItem(props: BlogPostsListItemProps) {
           {formattedDate}
         </p>
         <h2 className="text-2xl font-bold">
-          <a href={props.href} className="hover:underline">
-            {props.title}
-          </a>
+          <Link href={`/blog/posts/${props.href}`}>
+            <a className="hover:underline">{props.title}</a>
+          </Link>
         </h2>
         <p className="line-clamp-3">{props.snippet}</p>
       </div>
