@@ -4,7 +4,7 @@ import MultiLineToParagraphs from "./MultiLineToParagraphs";
 
 interface BlogPostDetailProps {
   title: string;
-  coverImage: string;
+  coverImage?: string;
   snippet: string;
   content: React.ReactNode;
   createdAt: string;
