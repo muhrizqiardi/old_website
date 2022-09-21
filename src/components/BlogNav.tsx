@@ -9,8 +9,8 @@ export interface NavItemProps {
 function NavItem(props: NavItemProps) {
   return (
     <li
-      className={`py-1 px-1.5 rounded-md bg-custom-primary ${
-        props.isCurrentPage ? "font-medium bg-custom-primary" : ""
+      className={`py-1 px-1.5 rounded-md ${
+        props.isCurrentPage ? "font-bold" : ""
       }`}
     >
       <a href={props.href} className="hover:underline">
@@ -29,7 +29,7 @@ function Nav(props: NavProps) {
 
   return (
     <div className="h-16 md:h-screen p-3 flex md:flex-col z-50 bg-white md:overflow-y-auto">
-      <div className="mr-auto md:mr-0 flex md:flex-col items-center gap-4">
+      <div className="mr-auto md:mr-0 p-6 flex md:flex-col items-center gap-4">
         <div className="w-10 h-10 md:w-28 md:h-28 bg-gray-300 rounded-full flex-shrink-0"></div>
         <p className="font-medium">muhrizqiardi</p>
       </div>
