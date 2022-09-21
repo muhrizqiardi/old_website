@@ -63,7 +63,7 @@ function HomeHeader(props: HomeHeaderProps) {
         </a>
         <div
           className={`w-full lg:w-min h-screen lg:h-min fixed ${
-            mobileNavIsOpen ? "hidden lg:block" : ""
+            mobileNavIsOpen ? "" : "hidden lg:block"
           } lg:static top-0 right-0 bg-black bg-opacity-20 lg:bg-transparent`}
         >
           <nav className="py-4 lg:py-0 bg-custom-light lg:bg-transparent text-custom-dark text-sm flex flex-col lg:flex-row items-center lg:items-start gap-4">
