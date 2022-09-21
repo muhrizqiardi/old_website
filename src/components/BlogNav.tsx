@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-export interface NavItemProps {
+export interface BlogNavItemProps {
   href: string;
   title: string;
   isCurrentPage: boolean;
 }
 
-function NavItem(props: NavItemProps) {
+function BlogNavItem(props: BlogNavItemProps) {
   return (
     <li
       className={`py-1 px-1.5 rounded-md ${
@@ -20,11 +20,11 @@ function NavItem(props: NavItemProps) {
   );
 }
 
-export interface NavProps {
-  navItems: NavItemProps[];
+export interface BlogNavProps {
+  navItems: BlogNavItemProps[];
 }
 
-function Nav(props: NavProps) {
+function BlogNav(props: BlogNavProps) {
   const [navMenuIsOpen, setNavMenuIsOpen] = useState<boolean>(false);
 
   return (
@@ -42,7 +42,7 @@ function Nav(props: NavProps) {
         <div className="bg-white">
           <ul className="py-12 flex flex-col justify-center items-center gap-4">
             {props.navItems.map((navItem, index) => (
-              <NavItem key={index} {...navItem} />
+              <BlogNavItem key={index} {...navItem} />
             ))}
           </ul>
         </div>
@@ -57,4 +57,4 @@ function Nav(props: NavProps) {
   );
 }
 
-export default Nav;
+export default BlogNav;

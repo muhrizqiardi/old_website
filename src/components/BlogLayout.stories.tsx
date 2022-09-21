@@ -34,7 +34,7 @@ export const defaultStory = () => (
 );
 
 export const exampleStory = () => (
-  <BlogLayout navMenu={<Nav navItems={navItems} />}>
+  <BlogLayout navMenu={<BlogNav navItems={navItems} />}>
     <div className="h-72 bg-blue-500 flex justify-center items-center">
       Content
     </div>
