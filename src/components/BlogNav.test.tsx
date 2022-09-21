@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Nav from "./Nav";
+import Nav from "./BlogNav";
 
 describe("Nav", () => {
   it("should render all nav items correctly", () => {

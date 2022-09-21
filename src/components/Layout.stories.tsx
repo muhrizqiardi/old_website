@@ -1,5 +1,5 @@
 import Layout from "./Layout";
-import Nav from "./Nav";
+import Nav from "./BlogNav";
 
 const navItems = [
   {
