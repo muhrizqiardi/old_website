@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
 export interface BlogNavItemProps {
   href: string;
@@ -9,7 +10,7 @@ export interface BlogNavItemProps {
 
 function BlogNavItem(props: BlogNavItemProps) {
   const router = useRouter();
-  
+
   return (
     <li className="py-1 px-1.5 rounded-md">
       <Link href={props.href} passHref>
@@ -36,7 +37,11 @@ function BlogNav(props: BlogNavProps) {
   return (
     <div className="h-16 md:h-screen p-3 flex md:flex-col z-50 bg-white md:overflow-y-auto">
       <div className="mr-auto md:mr-0 md:p-6 flex md:flex-col items-center gap-4">
-        <div className="w-10 h-10 md:w-28 md:h-28 bg-gray-300 rounded-full flex-shrink-0"></div>
+        <img
+          src="/assets/animated_signature.svg"
+          className="w-10 h-10 md:w-28 md:h-28 rounded-full flex-shrink-0"
+          alt="Rizqi's animated signature"
+        />
         <p className="font-medium">muhrizqiardi</p>
       </div>
       <div
@@ -55,8 +60,9 @@ function BlogNav(props: BlogNavProps) {
       </div>
       <button
         onClick={() => setNavMenuIsOpen((x) => !x)}
-        className="w-10 h-10 md:hidden bg-gray-300 rounded-md"
+        className="w-10 h-10 md:hidden rounded-md"
       >
+        <Bars3Icon />
         <span className="sr-only">Toggle Navigation Menu</span>
       </button>
     </div>
