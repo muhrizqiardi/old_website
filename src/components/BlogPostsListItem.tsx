@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
 interface BlogPostsListItemProps {
-  thumbnail: string;
+  thumbnail?: string;
   title: string;
   href: string;
   snippet: string;
@@ -25,13 +25,17 @@ function BlogPostsListItem(props: BlogPostsListItemProps) {
 
   return (
     <article className="flex flex-col md:flex-row gap-4">
-      <img
-        src={props.thumbnail}
-        alt={props.title}
-        className="w-full md:w-56 h-56 md:h-36 object-cover rounded-2xl flex flex-col gap-3"
-      />
+      {props.thumbnail ? (
+        <img
+          src={props.thumbnail}
+          alt={props.title}
+          className="w-full md:w-56 h-56 md:h-36 object-cover rounded-2xl flex flex-col gap-3"
+        />
+      ) : null}
       <div className="flex flex-col">
-        <p className="mb-1 text-custom-primary text-sm uppercase">{formattedDate}</p>
+        <p className="mb-1 text-custom-primary text-sm uppercase">
+          {formattedDate}
+        </p>
         <h2 className="text-2xl font-bold">
           <a href={props.href} className="hover:underline">
             {props.title}
