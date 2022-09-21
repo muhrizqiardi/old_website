@@ -6,7 +6,7 @@ interface BlogPostDetailProps {
   title: string;
   coverImage: string;
   snippet: string;
-  content: string;
+  content: React.ReactNode;
   createdAt: string;
   updatedAt?: string | null;
 }
