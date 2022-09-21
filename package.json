@@ -3,24 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "website:dev": "next dev",
+    "website:build": "next build",
+    "website:start": "next start",
+    "website:lint": "next lint",
+    "ladle:dev": "ladle dev"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.11",
+    "@notionhq/client": "^2.2.0",
+    "dayjs": "^1.11.5",
+    "envsafe": "^2.0.3",
     "next": "12.3.1",
+    "notion-to-md": "^2.5.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "@ladle/react": "^2.4.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.7",
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
+    "@types/react-syntax-highlighter": "^15.5.5",
     "autoprefixer": "^10.4.11",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.1",

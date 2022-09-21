@@ -1,6 +1,6 @@
 import BlogPostDetail from "./BlogPostDetail";
-import Layout from "./Layout";
-import Nav from "./Nav";
+import BlogLayout from "./BlogLayout";
+import BlogNav from "./BlogNav";
 
 const content = (
   <>
@@ -51,9 +51,9 @@ const blogPostDetailProps = {
 export const defaultStory = () => <BlogPostDetail {...blogPostDetailProps} />;
 
 export const exampleUsage = () => (
-  <Layout
+  <BlogLayout
     navMenu={
-      <Nav
+      <BlogNav
         navItems={[
           {
             href: "/",
@@ -75,5 +75,5 @@ export const exampleUsage = () => (
     }
   >
     <BlogPostDetail {...blogPostDetailProps} />
-  </Layout>
+  </BlogLayout>
 );

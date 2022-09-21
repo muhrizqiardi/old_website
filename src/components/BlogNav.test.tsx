@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Nav from "./Nav";
+import BlogNav from "./BlogNav";
 
 describe("Nav", () => {
   it("should render all nav items correctly", () => {
@@ -21,7 +21,7 @@ describe("Nav", () => {
       },
     ];
 
-    render(<Nav navItems={navItems} />);
+    render(<BlogNav navItems={navItems} />);
 
     const navItemElements = screen.getAllByRole("link");
 
@@ -39,7 +39,7 @@ describe("Nav", () => {
       },
     ];
 
-    render(<Nav navItems={navItems} />);
+    render(<BlogNav navItems={navItems} />);
 
     const navButtonElement = screen.getByText("Toggle Navigation Menu");
     const navMenuElement = screen.getByTestId("navigation-menu");

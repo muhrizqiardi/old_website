@@ -1,4 +1,4 @@
-import Nav from "./Nav";
+import BlogNav from "./BlogNav";
 
 const navItems = [
   {
@@ -19,13 +19,13 @@ const navItems = [
 ];
 
 export const defaultStory = () => (
-  <Nav
+  <BlogNav
     navItems={navItems}
   />
 );
 
 defaultStory.storyName = "default";
 
-export const exampleStory = () => <Nav navItems={navItems} />;
+export const exampleStory = () => <BlogNav navItems={navItems} />;
 
 exampleStory.storyName = "example";

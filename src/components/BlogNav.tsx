@@ -1,35 +1,41 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
-export interface NavItemProps {
+export interface BlogNavItemProps {
   href: string;
   title: string;
-  isCurrentPage: boolean;
 }
 
-function NavItem(props: NavItemProps) {
+function BlogNavItem(props: BlogNavItemProps) {
+  const router = useRouter();
+  
   return (
-    <li
-      className={`py-1 px-1.5 rounded-md bg-custom-primary ${
-        props.isCurrentPage ? "font-medium bg-custom-primary" : ""
-      }`}
-    >
-      <a href={props.href} className="hover:underline">
-        {props.title}
-      </a>
+    <li className="py-1 px-1.5 rounded-md">
+      <Link href={props.href} passHref>
+        <a
+          href={props.href}
+          className={`hover:underline ${
+            router.pathname === props.href ? "font-bold" : ""
+          }`}
+        >
+          {props.title}
+        </a>
+      </Link>
     </li>
   );
 }
 
-export interface NavProps {
-  navItems: NavItemProps[];
+export interface BlogNavProps {
+  navItems: BlogNavItemProps[];
 }
 
-function Nav(props: NavProps) {
+function BlogNav(props: BlogNavProps) {
   const [navMenuIsOpen, setNavMenuIsOpen] = useState<boolean>(false);
 
   return (
     <div className="h-16 md:h-screen p-3 flex md:flex-col z-50 bg-white md:overflow-y-auto">
-      <div className="mr-auto md:mr-0 flex md:flex-col items-center gap-4">
+      <div className="mr-auto md:mr-0 md:p-6 flex md:flex-col items-center gap-4">
         <div className="w-10 h-10 md:w-28 md:h-28 bg-gray-300 rounded-full flex-shrink-0"></div>
         <p className="font-medium">muhrizqiardi</p>
       </div>
@@ -42,7 +48,7 @@ function Nav(props: NavProps) {
         <div className="bg-white">
           <ul className="py-12 flex flex-col justify-center items-center gap-4">
             {props.navItems.map((navItem, index) => (
-              <NavItem key={index} {...navItem} />
+              <BlogNavItem key={index} {...navItem} />
             ))}
           </ul>
         </div>
@@ -57,4 +63,4 @@ function Nav(props: NavProps) {
   );
 }
 
-export default Nav;
+export default BlogNav;
