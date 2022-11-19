@@ -15,14 +15,13 @@ function BlogPostsListItem(props: BlogPostsListItemProps) {
     "DD MMM YYYY, HH:mm"
   );
 
-  const formattedUpdatedAt = dayjs(props.createdAt).format(
-    "DD MMM YYYY, HH:mm"
-  );
+  let formattedUpdatedAt: string = "";
+  if (props.updatedAt)
+    formattedUpdatedAt = dayjs(props.updatedAt).format("DD MMM YYYY, HH:mm");
 
-  const formattedDate =
-    props.updatedAt !== undefined && props.updatedAt !== null
-      ? `Updated at ${formattedUpdatedAt} | Created at ${formattedCreatedAt}`
-      : `Created at ${formattedCreatedAt}`;
+  let formattedDate = `Created at ${formattedCreatedAt}`;
+
+  if (props.updatedAt) formattedDate = `Updated at ${formattedUpdatedAt}`;
 
   return (
     <article className="flex flex-col md:flex-row gap-4">

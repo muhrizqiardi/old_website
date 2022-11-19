@@ -16,14 +16,13 @@ function BlogPostDetail(props: BlogPostDetailProps) {
     "DD MMM YYYY, HH:mm"
   );
 
-  const formattedUpdatedAt = dayjs(props.updatedAt).format(
-    "DD MMM YYYY, HH:mm"
-  );
+  let formattedUpdatedAt: string = "";
+  if (props.updatedAt)
+    formattedUpdatedAt = dayjs(props.updatedAt).format("DD MMM YYYY, HH:mm");
 
-  const formattedDate =
-    props.updatedAt !== undefined && props.updatedAt !== null
-      ? `Created at ${formattedCreatedAt}, updated at ${formattedUpdatedAt}`
-      : `Created at ${formattedCreatedAt}`;
+  let formattedDate = `Created at ${formattedCreatedAt}`;
+
+  if (props.updatedAt) formattedDate = `Updated at ${formattedUpdatedAt}`;
 
   return (
     <div className="max-w-2xl mx-auto my-8 p-4">
