@@ -4,6 +4,7 @@ import BlogNav from "../../../components/BlogNav";
 import BlogPostDetail, {
   BlogPostDetailProps,
 } from "../../../components/BlogPostDetail";
+import Meta from "../../../components/Meta";
 import { blogNavItems } from "../../../helpers/constants";
 import blogPost from "../../../services/blogPost";
 
@@ -31,10 +32,17 @@ export const getStaticProps: GetStaticProps<BlogPostDetailPageProps> = async (
 
 export default function BlogPostDetailPage(props: BlogPostDetailPageProps) {
   return (
-    <BlogLayout navMenu={<BlogNav navItems={blogNavItems} />}>
-      <div className="p-6">
-        <BlogPostDetail {...props} />
-      </div>
-    </BlogLayout>
+    <>
+      <Meta
+        image={props.coverImage}
+        title={props.title}
+        description={props.snippet}
+      />
+      <BlogLayout navMenu={<BlogNav navItems={blogNavItems} />}>
+        <div className="p-6">
+          <BlogPostDetail {...props} />
+        </div>
+      </BlogLayout>
+    </>
   );
 }

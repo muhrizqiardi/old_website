@@ -31,7 +31,7 @@ function BlogPostDetail(props: BlogPostDetailProps) {
           <p className="mb-1 text-custom-primary text-sm uppercase">
             {formattedDate}
           </p>
-          <h2 className="mb-4 text-2xl font-bold">{props.title}</h2>
+          <h1 className="mb-4 text-2xl font-bold">{props.title}</h1>
         </div>
 
         {props.coverImage ? (
