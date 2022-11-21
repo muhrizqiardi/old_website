@@ -9,7 +9,7 @@ function HomeSection(props: HomeSectionProps) {
       <h1 className="text-center text-2xl lg:text-3xl font-bold mb-5 lg:mb-10">
         {props.title}
       </h1>
-        {props.children}
+      <article className="prose max-w-none text-black">{props.children}</article>
     </section>
   );
 }

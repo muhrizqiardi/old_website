@@ -1,0 +1,41 @@
+full name: Muhammad Rizqi Ardiansyah
+headline: Front End Engineer and Informatics Engineering Student at State University of Surabaya
+about me:
+  Hi! I'm Muhammad Rizqi Ardiansyah. You can also call me Rizqi. Since I was little, I've always interested in technology and building stuff. When I was little, I really liked crafting stuff, from a simple origami to something complex like building a robot from a kit my late dad bought me.
+
+  Then one day, when I was around ten years-old, I came across a random blog post about how to make a simple game only by writing code in Notepad. Twelve years-old me was mind-blown--the fact that you can build anything inside a computer by only writing code inside a Notepad was truly astonishing.
+
+  Believe it or not, that moment was truly life-changing--that was the moment I found my passion in programming. That passion has sticked with me ever since.
+
+  Fast-forward to today, I am now studying Informatics Engineering at State University of Surabaya. I also had the privilege to work as a Freelance Frontend Engineer at Rumah Coding Cerdas.
+
+  Of course programming isn't the only thing I'm passionate about. I also like listening to music. Usually, I listen to classical music, alt-rock (especially Radiohead), electronic music, jazz, and many more!
+socials:
+  email: mailto:muhrizqiardi@gmail.com
+  github: https://github.com/muhrizqiardi
+  twitter: https://twitter.com/muh_rizqi_ardi
+  instagram: https://instagram.com/muhrizqiardi
+  mastodon: https://mastodon.social/@muhrizqiardi
+  linkedin: https://linkedin.com/in/muhrizqiardi
+resume: https://
+experiences:
+  - date: Dec 2021 - June 2022
+    title: Frontend Engineer at Rumah Coding Cerdas
+    description: Implement a single-page application (SPA) website using React library based on a provided design, write unit tests for the written code, and collaborate with the team to implement new features
+projects:
+  - title: LABCO
+    href: /blog/posts/projects-labco
+    image: /assets/projects-thumbnail/labco.png
+    description: A lab management system made for final project in a Software Engineering class with my team. The app was made using Next.js framework, both the frontend and backend. Used TailwindCSS for the styling, and MongoDB for the non-relational database.
+  - title: SpaceWork
+    href: /blog/posts/projects-spacework
+    image: /assets/projects-thumbnail/spacework.png
+    description: A remote job listing web app, made for final project in Web Programming class with my team. The front-end side was made using React, with TailwindCSS as the styling. The back-end side was made using Fastify. The database used in this project are PostgreSQL, hosted from Supabase.
+  - title: Booktracker
+    href: /blog/posts/projects-booktracker
+    image: /assets/projects-thumbnail/booktracker.png
+    description: A mobile app to track book progress, made for project in Mobile Programming class with my team. The app was made using Flutter. It stores data using SQLite, and fetches data from Google Books API.
+  - title: Shopbux
+    href: /blog/posts/projects-shopbux
+    image: /assets/projects-thumbnail/shopbux.png
+    description: A shopping cart app I made to demonstrate Redux in React.

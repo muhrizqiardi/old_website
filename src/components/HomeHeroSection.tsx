@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export interface HomeHeroSectionProps {
   heroImageSrc?: string;
+  resumeUrl?: string;
 }
 
 function HomeHeroSection(props: HomeHeroSectionProps) {
@@ -44,12 +45,15 @@ function HomeHeroSection(props: HomeHeroSectionProps) {
           passionate about technology.
         </p>
         <div className="mt-4 inline-flex gap-4">
-          <Link href="/resume.pdf">
-            <a className="px-3 py-2 bg-custom-dark text-custom-light rounded-md">About me</a>
-          </Link>
-          <Link href="/resume.pdf">
-            <a className="px-3 py-2 bg-custom-dark text-custom-light rounded-md">Resume</a>
-          </Link>
+          {props.resumeUrl ? (
+            <Link href={props.resumeUrl}>
+              <a className="px-3 py-2 text-sm bg-custom-dark text-custom-light rounded-md hover:bg-custom-primary hover:text-custom-dark">
+                Resume
+              </a>
+            </Link>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </section>
